@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rocks",
+  "info": {
+    "singularName": "rock",
+    "pluralName": "rocks",
+    "displayName": "rocks"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1
+    },
+    "cover": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "rings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ring.ring",
+      "inversedBy": "rocks"
+    },
+    "chains": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chain.chain",
+      "inversedBy": "rocks"
+    },
+    "earrings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::earring.earring",
+      "inversedBy": "rocks"
+    }
+  }
+}

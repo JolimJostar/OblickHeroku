@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chains",
+  "info": {
+    "singularName": "chain",
+    "pluralName": "chains",
+    "displayName": "chains",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1
+    },
+    "desc": {
+      "type": "text",
+      "required": true,
+      "minLength": 1
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "min": "0"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "chain_sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chain-size.chain-size",
+      "inversedBy": "chains"
+    },
+    "rocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rock.rock",
+      "inversedBy": "chains"
+    },
+    "metal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::metal.metal",
+      "inversedBy": "chains"
+    }
+  }
+}

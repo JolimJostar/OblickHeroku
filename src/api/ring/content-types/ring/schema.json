@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rings",
+  "info": {
+    "singularName": "ring",
+    "pluralName": "rings",
+    "displayName": "rings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1
+    },
+    "desc": {
+      "type": "text",
+      "required": true,
+      "unique": false,
+      "minLength": 1
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "unique": false,
+      "min": "0"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "minLength": 1
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ring_sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ring-size.ring-size",
+      "inversedBy": "rings"
+    },
+    "rocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rock.rock",
+      "inversedBy": "rings"
+    },
+    "metal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::metal.metal",
+      "inversedBy": "rings"
+    }
+  }
+}

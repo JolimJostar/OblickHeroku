@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ring_sizes",
+  "info": {
+    "singularName": "ring-size",
+    "pluralName": "ring-sizes",
+    "displayName": "ring-sizes"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1
+    },
+    "sizeEU": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1
+    },
+    "rings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ring.ring",
+      "inversedBy": "ring_sizes"
+    }
+  }
+}

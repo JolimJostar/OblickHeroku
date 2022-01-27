@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chain_sizes",
+  "info": {
+    "singularName": "chain-size",
+    "pluralName": "chain-sizes",
+    "displayName": "chain-sizes"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 0
+    },
+    "chains": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chain.chain",
+      "inversedBy": "chain_sizes"
+    }
+  }
+}

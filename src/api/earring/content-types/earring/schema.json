@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "earrings",
+  "info": {
+    "singularName": "earring",
+    "pluralName": "earrings",
+    "displayName": "earrings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1
+    },
+    "desc": {
+      "type": "text",
+      "required": true,
+      "minLength": 1
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "min": "0"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "earring_sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::earring-size.earring-size",
+      "inversedBy": "earrings"
+    },
+    "rocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rock.rock",
+      "inversedBy": "earrings"
+    },
+    "metal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::metal.metal",
+      "inversedBy": "earrings"
+    }
+  }
+}

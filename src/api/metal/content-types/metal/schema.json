@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "metals",
+  "info": {
+    "singularName": "metal",
+    "pluralName": "metals",
+    "displayName": "metals"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1
+    },
+    "rings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ring.ring",
+      "mappedBy": "metal"
+    },
+    "chains": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chain.chain",
+      "mappedBy": "metal"
+    },
+    "earrings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::earring.earring",
+      "mappedBy": "metal"
+    }
+  }
+}
