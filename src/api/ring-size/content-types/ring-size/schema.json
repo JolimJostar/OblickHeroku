@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ring-size",
     "pluralName": "ring-sizes",
-    "displayName": "ring-sizes"
+    "displayName": "ring-sizes",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,13 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "size": {
-      "type": "integer",
+      "type": "decimal",
       "required": true,
       "unique": true,
       "min": 1
     },
     "sizeEU": {
-      "type": "integer",
+      "type": "decimal",
       "required": true,
       "unique": true,
       "min": 1

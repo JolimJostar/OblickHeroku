@@ -44,7 +44,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::chain-size.chain-size",
-      "inversedBy": "chains"
+      "mappedBy": "chains"
     },
     "rocks": {
       "type": "relation",

@@ -47,7 +47,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ring-size.ring-size",
-      "inversedBy": "rings"
+      "mappedBy": "rings"
     },
     "rocks": {
       "type": "relation",
