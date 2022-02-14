@@ -60,6 +60,13 @@
       "relation": "manyToOne",
       "target": "api::metal.metal",
       "inversedBy": "rings"
+    },
+    "pictures": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

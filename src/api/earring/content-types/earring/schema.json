@@ -40,12 +40,6 @@
         "images"
       ]
     },
-    "earring_sizes": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::earring-size.earring-size",
-      "mappedBy": "earrings"
-    },
     "rocks": {
       "type": "relation",
       "relation": "manyToMany",
